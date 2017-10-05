@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<main>
+        <div class="row">
+       
+                    <h1>Coba Sequelize</h1>
+                    <ul>
+                        <li><a href="/teacher">Teacher</a></li>
+                        <li><a href="/subject">Subject</a></li>
+                        <li><a href="/student">Student</a></li>
+                    </ul>
+                    <table style="width:100%">
+                        <tr>
+                        	<th>ID</th>                            
+                        	<th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email</th>
+                        </tr>
+                        <% allTeacher.forEach((temps) => { %>
+                        <tr>
+                        	<td><%= temps.id%></td>
+                            <td><%= temps.first_name%></td>
+                            <td><%= temps.last_name%></td>
+                            <td><%= temps.email%></td>
+                        </tr>
+                        <% }); %>
+                    </table>
+                </div>
+            </div>
+            <div>
+    </main>
+</body>
+</html>
