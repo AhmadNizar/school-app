@@ -2,23 +2,22 @@
 <html>
 <head>
 	<title></title>
+    <% include ./partials/head %>
 </head>
-<body>
+<body class='container'>
 <main>
+<header>
+    <% include ./partials/header %>
+</header>
         <div class="row">
-       
-                    <h1>Coba Sequelize</h1>
-                    <ul>
-                        <li><a href="/teacher">Teacher</a></li>
-                        <li><a href="/subject">Subject</a></li>
-                        <li><a href="/student">Student</a></li>
-                    </ul>
                     <table style="width:100%">
                         <tr>
                         	<th>ID</th>                            
                         	<th>First Name</th>
                             <th>Last Name</th>
                             <th>Email</th>
+                            <th>Subject</th>
+                            <th>Option</th>
                         </tr>
                         <% allTeacher.forEach((temps) => { %>
                         <tr>
@@ -26,12 +25,23 @@
                             <td><%= temps.first_name%></td>
                             <td><%= temps.last_name%></td>
                             <td><%= temps.email%></td>
+                            <% if(temps.Subject){%> 
+                            <td><%= temps.Subject.subject_name%></td>
+                            <% }else{%>
+                            <td>Unassigned</td>
+                            <% } %>
+                            <td>
+                                <a href="/teacher/deleteTeacher/<%= temps.id%>">Delete</a>
+                                <a href="/teacher/editTeacher/<%= temps.id%>">Edit</a>
+                            </td> 
                         </tr>
                         <% }); %>
                     </table>
-                </div>
-            </div>
-            <div>
+        </div>
+
+<footer>
+    <% include ./partials/footer %>
+</footer>
     </main>
 </body>
 </html>

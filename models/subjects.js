@@ -2,12 +2,14 @@
 module.exports = (sequelize, DataTypes) => {
   var Subjects = sequelize.define('Subjects', {
     subject_name: DataTypes.STRING
-  }, {
-    classMethods: {
-      associate: function(models) {
-        // associations can be defined here
-      }
-    }
-  });
+  })
+  Subjects.associate = model =>{
+    Subjects.hasMany(model.Teachers, {foreignKey : "SubjectId"})
+    Subjects.hasMany(model.School)
+    Subjects.belongsToMany(model.Student, {through : 'School'})
+    //Subjects.hasMany(model.Konjungsi, {foreignKey : "SubjectId"})
+    //Subjects.hasMany(model.Student,)
+    //Belom paham
+  }
   return Subjects;
 };

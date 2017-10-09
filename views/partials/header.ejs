@@ -1,0 +1,71 @@
+<nav class="navbar navbar-default" role="navigation">
+<div class="container-fluid">
+
+    <div class="navbar-header">
+        <a class="navbar-brand" href="#">
+            <span class="glyphicon glyphicon glyphicon-tree-deciduous"></span>
+            School Apps
+        </a>
+
+        <ul class="nav navbar-nav">
+        <%if(role === 'headmaster'){%>
+            <li><a href="/index">Home</a></li>
+
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="/teacher">Teacher<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                     <li><a href="/teacher">Teacher</a></li>
+                     <li><a href="/teacher/add">Add Teacher</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="/subject">Subject<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                     <li><a href="/subject">Subject</a></li>
+                     <li><a href="/subject/add">Add Subject</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="/student">Student<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                     <li><a href="/student">Student</a></li>
+                     <li><a href="/student/add">Add Student</a></li>
+                </ul>
+            </li>
+
+            <li><a href="/login/logout">Log Out</a></li>
+
+        <%}else if(role==='academic'){%>
+
+        <li><a href="/index">Home</a></li>
+        
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="/subject">Subject<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                     <li><a href="/subject">Subject</a></li>
+                     <li><a href="/subject/add">Add Subject</a></li>
+                </ul>
+        </li>
+            
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="/student">Student<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                     <li><a href="/student">Student</a></li>
+                     <li><a href="/student/add">Add Student</a></li>
+                </ul>
+        </li>
+            
+        <li><a href="/login/logout">Log Out</a></li>
+        <%}else if(role==='teacher'){%>
+        <li><a href="/index">Home</a></li>
+        
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="/student">Student<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                     <li><a href="/student">Student</a></li>
+                     <li><a href="/student/add">Add Student</a></li>
+                </ul>
+        </li>
+        
+        <li><a href="/login/logout">Log Out</a></li>
+        <%}%>
+        </ul>
+    </div>
+</div>
+</nav>

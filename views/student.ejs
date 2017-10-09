@@ -2,18 +2,16 @@
 <html>
 <head>
 	<title></title>
+    <% include ./partials/head %>
 </head>
-<body>
+<body class='container'>
 <main>
+<header>
+    <% include ./partials/header %>
+</header>
         <div class="row">
-       
+
                     <h1>Student</h1>
-                    <h2><a href="/student/add">Add Student</a></h2>
-                    <ul>
-                        <li><a href="/teacher">Teacher</a></li>
-                        <li><a href="/subject">Subject</a></li>
-                        <li><a href="/student">Student</a></li>
-                    </ul>
                     <table style="width:100%">
                         <tr>
                             <th>ID</th>                            
@@ -21,6 +19,7 @@
                             <th>Last Name</th>
                             <th>Email</th>
                             <th>Action</th>
+                            <th>Option</th>
                         </tr>
                         <% allStudent.forEach((temps) => { %>
                         <tr>
@@ -28,16 +27,18 @@
                             <td><%= temps.first_name%></td>
                             <td><%= temps.last_name%></td>
                             <td><%= temps.email%></td>
+                            <td><a href="/student/addSubjectByStudent/<%= temps.id%>">Add Subject</a></td>
                             <td>
-                                <a href="/deleteStudent/<%= temps.id%>">Delete</a>
-                                <a href="/edit/<%= temps.id%>">Edit</a> 
+                                <a href="/student/deleteStudent/<%= temps.id%>">Delete</a>
+                                <a href="/student/edit/<%= temps.id%>">Edit</a> 
                             </td>
                         </tr>
                         <% }); %>
                     </table>
-                </div>
-            </div>
-            <div>
+        </div>
+<footer>
+    <% include ./partials/footer %>
+</footer>
     </main>
 </body>
 </html>
