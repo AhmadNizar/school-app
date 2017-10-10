@@ -32,6 +32,6 @@ app.get('/', function (req, res) {
   res.redirect('/login')
 })
 
-app.listen(3000, function() {
+app.listen(process.env.PORT || '3000', function() {
   //console.log('sini guuys');
 });
