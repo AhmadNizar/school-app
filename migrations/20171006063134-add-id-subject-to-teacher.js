@@ -9,7 +9,7 @@ module.exports = {
       Example:
       return queryInterface.createTable('users', { id: Sequelize.INTEGER });
     */
-    queryInterface.addColumn('Teachers', 'subjectId', Sequelize.INTEGER);
+    queryInterface.addColumn('Teachers', 'SubjectId', Sequelize.INTEGER);
   },
 
   down: (queryInterface, Sequelize) => {
@@ -20,6 +20,6 @@ module.exports = {
       Example:
       return queryInterface.dropTable('users');
     */
-    queryInterface.removeColumn('Teachers', 'subjectId', Sequelize.INTEGER);
+    queryInterface.removeColumn('Teachers', 'SubjectId', Sequelize.INTEGER);
   }
 };
