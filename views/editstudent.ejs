@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+    <main>
+    <h1>Edit Student Data</h1>
+    <h2><a href="/student">show all data</a></h2>
+        <div class="row">
+        <form action="/student/edit/<%= temp.id%>" method="POST">
+                <input type="text" value=<%= temp.first_name%> name="first_name">
+                <input type="text" value=<%= temp.last_name%> name="last_name">
+                <input type="text" value=<%= temp.email%> name="email">
+                <button type="submit">Submit</button>
+         </form>               
+        </div>
+    </main>
+</body>
+</html>

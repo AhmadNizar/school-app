@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+    <main>
+    <h1>Add Subject</h1>
+    <h2><a href="/student">show all data</a></h2>
+        <div class="row">
+        <table>
+            <tr>
+                <td>First name : <%= result.first_name%></td>
+            </tr>
+            <tr>
+                <td>Last name : <%= result.last_name%></td>
+            </tr>
+            <tr>
+                <td>Email : <%= result.email%></td>
+            </tr>
+        </table>
+        <form action="/student/addSubjectById/<%=result.id%>" method="POST">
+                <select name='subject_name'>
+                <% subject.forEach(function(temp) { %>
+                    <option value=<%= temp.id%>><%= temp.subject_name%></option>
+                <% }); %>
+                </select>
+                <button type="submit">Submit</button>
+         </form>               
+        </div>
+    </main>
+</body>
+</html>

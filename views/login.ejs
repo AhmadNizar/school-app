@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+    <% include ./partials/head %>
+</head>
+<body class='container'>
+<main>
+<p><%=message%></p>
+        <div class="row">
+                    <table style="width:100%">
+                        <form action="/login" method="POST">
+                            <input type="text" placeholder="username" name="username">
+                            <input type="text" placeholder="password" name="password">
+                            <button type="submit">Login</button>
+                        </form> 
+                    </table>
+                    <p><a href="/login/signup">Sign Up</a></p>
+        </div>
+<footer>
+    <% include ./partials/footer %>
+</footer>
+</main>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+    <% include ./partials/head %>
+</head>
+<body class='container'>
+<main>
+        <div class="row">
+                    <table style="width:100%">
+                        <form action="/login/signup" method="POST">
+                            <input type="text" placeholder="username" name="username">
+                            <input type="text" placeholder="password" name="password">
+                            <input type="text" placeholder="role" name="role">
+                            <button type="submit">Daftar</button>
+                        </form> 
+                    </table>
+        </div>
+<footer>
+    <% include ./partials/footer %>
+</footer>
+</main>
+</body>
+</html>

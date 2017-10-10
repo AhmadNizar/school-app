@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+    <% include ./partials/head %>
+</head>
+<body class='container'>
+<main>
+<header>
+    <% include ./partials/header %>
+</header>
+
+        <div class="row">
+                    <table style="width:100%">
+                        <tr>
+                            <th>ID</th>                            
+                        	<th>Subject Name</th>
+                            <th>Teachers Name</th>
+                            <th>Actions</th>
+                        </tr>
+                        <% result.forEach((temps, index) => { %>
+                        <tr>
+                            <td><%= temps.id%></td>
+                            <td><%= temps.subject_name%></td>
+                            <td>
+                                <% temps.Teachers.forEach((temps1, index1) =>{%>
+                                    <%= index1+1%>.<%= temps1.fullname()%><br>
+                                <%})%>
+                            </td>
+
+                            <td><a href="/subject/enrolledStudents/<%=temps.id%>">Enrolled Students</a></td>
+                        </tr>
+                        <% }); %>
+                    </table>
+        </div>
+<footer>
+    <% include ./partials/footer %>
+</footer>
+</main>
+</body>
+</html>

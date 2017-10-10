@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+    <main>
+    <h1><%=result[0].Subject.subject_name%></h1>
+    <h2><a href="/subject">show all data</a></h2>
+        <div class="row">
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Score</th>
+            </tr>
+            <%result.forEach((student)=>{%>
+            <tr>
+                
+                <td><%=student.Student.fullname()%></td>
+                <%if(student.Score){%>
+                <td><%=student.Score%></td>
+                <%}else{%>
+                <td><a href="/subject/addScore/<%=student.id%>">Give Score</a></td>
+                <%}%>
+            </tr>
+            <%})%>
+        </table>               
+        </div>
+    </main>
+</body>
+</html>
